@@ -9,6 +9,8 @@ public class TravelOrderDTO {
     private String toAirport;
     private Integer nights;
 
+    public TravelOrderDTO(){}
+
     private TravelOrderDTO(String fromAirport, String toAirport, Integer nights){
         this.fromAirport = fromAirport;
         this.toAirport = toAirport;

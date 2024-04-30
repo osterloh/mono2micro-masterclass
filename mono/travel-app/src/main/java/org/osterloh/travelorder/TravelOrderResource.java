@@ -10,6 +10,7 @@ import org.osterloh.hotel.Hotel;
 import org.osterloh.hotel.HotelResource;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Path("travelorder")
 public class TravelOrderResource {
@@ -22,8 +23,14 @@ public class TravelOrderResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<TravelOrder> orders(){
-        return TravelOrder.listAll();
+    public List<TravelOrderDTO> orders(){
+        return TravelOrder.<TravelOrder>listAll().stream()
+                .map(order -> TravelOrderDTO.of(
+                        order,
+                        flightResource.findByTravelOrderId(order.id),
+                        hotelResource.findByTravelOrderId(order.id)
+                        )
+                ).collect(Collectors.toList());
     }
 
     @GET
