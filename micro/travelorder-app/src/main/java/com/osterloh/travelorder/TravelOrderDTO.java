@@ -1,4 +1,4 @@
-package org.osterloh.travelorder;
+package com.osterloh.travelorder;
 
 import org.osterloh.flight.Flight;
 import org.osterloh.hotel.Hotel;
