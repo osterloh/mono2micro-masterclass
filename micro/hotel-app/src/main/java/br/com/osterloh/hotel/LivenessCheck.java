@@ -9,6 +9,6 @@ public class LivenessCheck implements HealthCheck {
 
     @Override
     public HealthCheckResponse call() {
-        return HealthCheckResponse.up("Hello world");
+        return HealthCheckResponse.up("Hotel App On");
     }
 }

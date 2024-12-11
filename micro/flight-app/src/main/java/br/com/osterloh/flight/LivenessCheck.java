@@ -1,4 +1,4 @@
-package br.com.osterloh.travelorder;
+package br.com.osterloh.flight;
 
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
@@ -9,6 +9,6 @@ public class LivenessCheck implements HealthCheck {
 
     @Override
     public HealthCheckResponse call() {
-        return HealthCheckResponse.up("Travellorder App On");
+        return HealthCheckResponse.up("Flight App On");
     }
 }
